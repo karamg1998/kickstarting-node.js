@@ -1,51 +1,7 @@
-console.log('a');
+let http=require('http');
 
-console.log('b');
+const server= http.createServer((get,send)=>{
+    console.log('karamveer');
+});
 
-function c(){
-    return new Promise((resolve,reject)=>{
-    setTimeout(() => {
-         console.log('c');
-          const err=false;
-         
-          if(!err)
-          {
-            resolve();
-          }
-          else{
-            reject('error');
-          }
-     },3000);
-    });
-}
-
-function d(){
-    return new Promise((resolve,reject)=>{
-    setTimeout(() => {
-         console.log('d');
-
-         const err=false;
-         
-         if(!err)
-         {
-           resolve();
-         }
-         else{
-           reject('error');
-         }
-     },0);
-    });
-}
-
-
-
-async function print()
-{
-    await c()
-    await d();
-    console.log('e');
-
-}
-print();
-
-
+server.listen(4000);
