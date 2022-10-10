@@ -1,4 +1,12 @@
-product =(a,b)=>{
-    console.log(a*b);
+let student={
+    name:'karamveer',
+    age:'24',
+    graduation:'Btech',
+
+    greet()
+    {
+        console.log('my name is '+this.name);
+    }
 }
-product(2,5);
+student.greet();
+
