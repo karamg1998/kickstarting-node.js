@@ -1,5 +1,4 @@
-let array = ['apple', 'oranges' , '', 'mango', '' , 'lemon'];
-
-let b=[...array]
-
-console.log(b);
+list=(...a)=>{
+    console.log(a);
+}
+list(1,2,3,4);
