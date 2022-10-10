@@ -1,5 +1,51 @@
-const arr=['karamveer',24,'khairthal','karamveer@xyz.com'];
+console.log('a');
 
-const [arr1,arr4]=arr;
+console.log('b');
 
-console.log(`my name is ${arr1} and my email address is ${arr4}`);
+function c(){
+    return new Promise((resolve,reject)=>{
+    setTimeout(() => {
+         console.log('c');
+          const err=false;
+         
+          if(!err)
+          {
+            resolve();
+          }
+          else{
+            reject('error');
+          }
+     },3000);
+    });
+}
+
+function d(){
+    return new Promise((resolve,reject)=>{
+    setTimeout(() => {
+         console.log('d');
+
+         const err=false;
+         
+         if(!err)
+         {
+           resolve();
+         }
+         else{
+           reject('error');
+         }
+     },0);
+    });
+}
+
+
+
+async function print()
+{
+    await c()
+    await d();
+    console.log('e');
+
+}
+print();
+
+
