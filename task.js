@@ -1,5 +1,5 @@
 let array = ['apple', 'oranges' , '', 'mango', '' , 'lemon'];
 
-let b=array.map(index => index==''? index+'empty string':index);
+let b=[...array]
 
 console.log(b);
