@@ -1,0 +1,21 @@
+{
+  "name": "kickstarting-node",
+  "version": "1.0.0",
+  "main": "routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node task.js",
+    "start-server": "node task.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karamg1998/kickstarting-node.js.git"
+  },
+  "author": "karamveer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karamg1998/kickstarting-node.js/issues"
+  },
+  "homepage": "https://github.com/karamg1998/kickstarting-node.js#readme",
+  "description": ""
+}
