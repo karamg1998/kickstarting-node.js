@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
  const method=req.method;
 
   if (url === '/' ) {
-    fs.readFile("./message.txt",{encoding: "utf-8"},(err,data)=>{
+    fs.readFile("./message.txt",(err,data)=>{
         if(err){
             console.log(err);
         }
@@ -39,4 +39,4 @@ const server = http.createServer((req, res) => {
     return res.end();
  }
 });
-  server.listen(300);
+  server.listen(500);
