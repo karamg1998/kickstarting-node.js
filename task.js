@@ -1,5 +1,7 @@
 const http = require('http');
 const fs=require('fs');
+const { brotliCompressSync, brotliDecompressSync } = require('zlib');
+const { buffer } = require('stream/consumers');
 
 const server = http.createServer((req, res) => {
   const url = req.url;
@@ -15,7 +17,18 @@ const server = http.createServer((req, res) => {
 
   if(url==='/message' && method ==='POST')
   {
-    fs.writeFileSync('message.txt','dummy');
+    const body=[];
+    req.on('data',(chunk)=>{
+   console.log(chunk);
+    body.push(chunk);
+    });
+    req.on('end',()=>{
+    const parsedBody=Buffer.concat(body).toString();
+    console.log(parsedBody);
+    const message=parsedBody.split('=')[1];
+     fs.writeFileSync('message.txt',message);
+    });
+   
     res.statusCode=302;//used for redirection
     res.setHeader('location','/');
     return res.end();
@@ -27,4 +40,4 @@ const server = http.createServer((req, res) => {
   res.write('</html>')
   res.end();
 });
-  server.listen(7000);
+  server.listen(9000);
