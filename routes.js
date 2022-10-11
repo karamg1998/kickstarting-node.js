@@ -38,8 +38,6 @@ const requestHandler=(req,res)=>{
       res.end();
 };
   
-module.exports={
-  handler:requestHandler,
-  someText:'hello world'
-}
+module.exports.handler=requestHandler;
+module.exports.someText='hello world';
   
